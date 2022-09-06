@@ -14,7 +14,7 @@
 
 ## **_Description_**
 
-### # Spaway is a website that allows the user to search for spa in the system. User can also register themselves and subsequently again access to create, read, update and delete their review! 
+### Spaway is a website that allows the user to search for spa in the system. User can also register themselves and subsequently again access to create, read, update and delete their review! 
 
 ---
 
