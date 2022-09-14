@@ -23,7 +23,7 @@ const SpasCard = (props) => {
   useEffect(() => {
     const selectedSpa = async () => {
       try {
-        let res = await Client.get(`${BASE_URL}/api/recipes/view/${id}`)
+        let res = await Client.get(`${BASE_URL}/api/spas/view/${id}`)
         setSpa(res.data)
       } catch (eer) {}
     }
@@ -36,14 +36,14 @@ const SpasCard = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    let res = await Client.put(`${BASE_URL}/api/recipes/${id}`, formState)
+    let res = await Client.put(`${BASE_URL}/api/spas/${id}`, formState)
     setFormState(initialState)
     alert('You have successfully updated the spa!')
     navigate('/feed')
   }
 
   const deleteSpa = async () => {
-    let res = await Client.delete(`${BASE_URL}/api/recipes/${id}`, formState)
+    let res = await Client.delete(`${BASE_URL}/api/spas/${id}`, formState)
     alert('You have successfully deleted the spa!')
     navigate('/feed')
   }
@@ -53,19 +53,16 @@ const SpasCard = (props) => {
 
   return (
     <div className="details_page">
-      <div>
-        <SideNav />
-      </div>
       <div className="details_grid">
-        <h1 className="recipe_title">{spa.title}</h1>
-        <img className="recipe_card" src={spa.image} alt="spa image" />
+        <h1 className="spa_name">{spa.spaName}</h1>
+        <img className="spa_card" src={spa.imageUrl} alt="spa image" />
         <div className="details_container">
-          <h1 className="details_header">Ingredients:</h1>
-          <h1 className="detail">{spa.ingredients}</h1>
-          <h1 className="details_header2">Directions:</h1>
-          <h1 className="detail">{spa.directions}</h1>
-          {/* <h1 className='details_header2'>Category:</h1> */}
-          <h1 className="detail">{spa.category}</h1>
+          <h1 className="details_header">Phone Number</h1>
+          <h1 className="detail">{spa.phoneNumber}</h1>
+          <h1 className="details_header2">Location</h1>
+          <h1 className="detail">{spa.location}</h1>
+          <h1 className="detail_header3">Description</h1>
+          <h1 className="detail">{spa.description}</h1>
         </div>
 
         <div className="forms_section">
@@ -73,65 +70,54 @@ const SpasCard = (props) => {
           <form onSubmit={handleSubmit}>
             <div className="form_container">
               <div className="input1">
-                <label htmlFor="title">Title:</label>
+                <label htmlFor="spa_name">Spa Name:</label>
                 <input
                   type="text"
-                  id="title"
+                  id="spaName"
                   onChange={handleChange}
-                  value={formState.title}
-                  placeholder={spa.title}
+                  value={formState.spaName}
+                  placeholder={spa.spaName}
                 />
               </div>
               <div className="input1">
-                <label htmlFor="image">Image:</label>
+                <label htmlFor="spa_image">Image:</label>
                 <input
                   type="text"
-                  id="image"
+                  id="imageUrl"
                   onChange={handleChange}
-                  value={formState.image}
-                  placeholder={spa.image}
+                  value={formState.imageUrl}
+                  placeholder={spa.imageUrl}
                 />
               </div>
               <div className="input1">
-                <label htmlFor="ingredients">Ingredients:</label>
+                <label htmlFor="phone_number">Phone Number:</label>
                 <textarea
                   type="text"
-                  id="ingredients"
+                  id="phoneNumber"
                   onChange={handleChange}
-                  value={formState.ingredients}
-                  placeholder={spa.ingredients}
+                  value={formState.phoneNumber}
+                  placeholder={spa.phoneNumber}
                 />
               </div>
               <div className="input2">
-                <label htmlFor="directions">Directions:</label>
+                <label htmlFor="location">Location:</label>
                 <textarea
                   type="text"
-                  id="directions"
+                  id="location"
                   onChange={handleChange}
-                  value={formState.directions}
-                  placeholder={spa.directions}
+                  value={formState.location}
+                  placeholder={spa.location}
                 />
               </div>
-              <div className="input1">
-                <label htmlFor="category">Category:</label>
-                <select
-                  id="category"
+              <div className="input3">
+                <label htmlFor="description">Description:</label>
+                <textarea
+                  type="text"
+                  id="description"
                   onChange={handleChange}
-                  value={formState.category}
-                >
-                  <option value="Default" selected>
-                    {' '}
-                    -Select One-{' '}
-                  </option>
-                  <option value="Diabetic Friendly">Diabetic Friendly</option>
-                  <option value="Gluten Free">Gluten Free</option>
-                  <option value="Halal">Halal</option>
-                  <option value="Kosher">Kosher</option>
-                  <option value="Lactose Free">Lactose Free</option>
-                  <option value="Low Sodium">Low Sodium</option>
-                  <option value="Vegan">Vegan</option>
-                  <option value="Vegetarian">Vegetarian</option>
-                </select>
+                  value={formState.description}
+                  placeholder={spa.description}
+                />
               </div>
               <div className="form_button"></div>
               <div className="button1">
