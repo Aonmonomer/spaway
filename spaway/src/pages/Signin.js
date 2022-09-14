@@ -11,9 +11,9 @@ const SignIn = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  // const refreshPage = () => {
-  //   window.location.reload()
-  // }
+  const refreshPage = () => {
+    window.location.reload()
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,7 +22,7 @@ const SignIn = () => {
       password: formValues.password
     })
     navigate('/feed')
-    // refreshPage()
+    refreshPage()
   }
 
   return (

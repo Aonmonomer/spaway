@@ -16,7 +16,6 @@ const Spa = (props) => {
   useEffect(() => {
     const getSpas = async () => {
       let res = await axios.get(`${BASE_URL}/api/spas/view/all`)
-      console.log(res.data)
       setSpa(res.data)
     }
     getSpas()
@@ -43,7 +42,7 @@ const Spa = (props) => {
               <p>Description: {spa.description}</p>
             </div>
           ))
-        : console.log('false nothin' + spa)}
+        : ''}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 5px;
+  padding: 0px;
   font-family: sans-serif;
   background-color: azure;
   scroll-behavior: smooth;
