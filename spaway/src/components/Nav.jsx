@@ -7,7 +7,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <div className="pub_opts">
         <span>
           <NavLink className="nav_links" to="/feed">
-            Feed
+            Spas
           </NavLink>
         </span>
         <span>
@@ -39,11 +39,6 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
       <span>
         <NavLink className="nav_links" to="/">
           Home
-        </NavLink>
-      </span>
-      <span>
-        <NavLink className="nav_links" to="/about">
-          About
         </NavLink>
       </span>
     </div>

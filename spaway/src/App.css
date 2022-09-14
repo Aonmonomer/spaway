@@ -10,15 +10,20 @@
 .navbar_container {
   color: navy;
   text-decoration: none;
-  background-color: white;
+  background-color: azure;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .home_pic_container {
-display: block;
-justify-content: center;
+  display: block;
+  justify-content: center;
   text-align: center;
 
+}
+
+.spa_card{
+  justify-content: center;
+  width: 500px;
 }
