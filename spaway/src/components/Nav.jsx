@@ -6,6 +6,12 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
     authenticatedOptions = (
       <div className="pub_opts">
         <span>
+          <NavLink className="nav_links" to="/spa_add">
+            Add Spa
+          </NavLink>
+        </span>
+
+        <span>
           <NavLink className="nav_links" to="/feed">
             Spas
           </NavLink>

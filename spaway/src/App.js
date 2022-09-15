@@ -8,6 +8,9 @@ import { CheckSession } from './services/Auth'
 import { useState, useEffect } from 'react'
 import Spa from './pages/Spa'
 import Register from './pages/Register'
+import SpaCard from './components/SpaCard'
+import SpaForm from './pages/SpaForm'
+import ReviewForm from './pages/Review'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -45,6 +48,15 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/feed" element={<Spa />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/spas/:id" element={<SpaCard />} />
+          <Route
+            path="/spa_add"
+            element={<SpaForm user={user} authenticated={authenticated} />}
+          />
+          <Route
+            path="/review"
+            element={<ReviewForm user={user} authenticated={authenticated} />}
+          />
           <Route
             path="/signin"
             element={

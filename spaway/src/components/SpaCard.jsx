@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import '../App.css'
 import Client from '../services/api'
 
-const SpasCard = (props) => {
+const SpaCard = (props) => {
   let navigate = useNavigate()
   const [spa, setSpa] = useState('')
 
@@ -24,6 +24,7 @@ const SpasCard = (props) => {
     const selectedSpa = async () => {
       try {
         let res = await Client.get(`${BASE_URL}/api/spas/view/${id}`)
+        console.log(res.data)
         setSpa(res.data)
       } catch (eer) {}
     }
@@ -57,16 +58,16 @@ const SpasCard = (props) => {
         <h1 className="spa_name">{spa.spaName}</h1>
         <img className="spa_card" src={spa.imageUrl} alt="spa image" />
         <div className="details_container">
-          <h1 className="details_header">Phone Number</h1>
-          <h1 className="detail">{spa.phoneNumber}</h1>
-          <h1 className="details_header2">Location</h1>
-          <h1 className="detail">{spa.location}</h1>
-          <h1 className="detail_header3">Description</h1>
-          <h1 className="detail">{spa.description}</h1>
+          <h3 className="details_header">Phone Number</h3>
+          <h3 className="detail">{spa.phoneNumber}</h3>
+          <h3 className="details_header2">Location</h3>
+          <h3 className="detail">{spa.location}</h3>
+          <h3 className="detail_header3">Description</h3>
+          <h3 className="detail">{spa.description}</h3>
         </div>
 
         <div className="forms_section">
-          <h1 className="forms_header">Edit this Spa</h1>
+          <h2 className="forms_header">Edit this Spa</h2>
           <form onSubmit={handleSubmit}>
             <div className="form_container">
               <div className="input1">
@@ -81,7 +82,7 @@ const SpasCard = (props) => {
               </div>
               <div className="input1">
                 <label htmlFor="spa_image">Image:</label>
-                <input
+                <textarea
                   type="text"
                   id="imageUrl"
                   onChange={handleChange}
@@ -91,7 +92,7 @@ const SpasCard = (props) => {
               </div>
               <div className="input1">
                 <label htmlFor="phone_number">Phone Number:</label>
-                <textarea
+                <input
                   type="text"
                   id="phoneNumber"
                   onChange={handleChange}
@@ -130,6 +131,9 @@ const SpasCard = (props) => {
 
           <div className="button2">
             <button onClick={deleteSpa}>Delete Spa</button>
+          </div>
+          <div className="button3">
+            <button onClick={() => navigate('/review')}>Review this Spa</button>
           </div>
         </div>
       </div>
