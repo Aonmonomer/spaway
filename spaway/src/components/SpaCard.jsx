@@ -8,6 +8,7 @@ import Client from '../services/api'
 const SpaCard = (props) => {
   let navigate = useNavigate()
   const [spa, setSpa] = useState('')
+  const [review, setReview] = useState('')
 
   const initialState = {
     spaName: '',
@@ -24,12 +25,22 @@ const SpaCard = (props) => {
     const selectedSpa = async () => {
       try {
         let res = await Client.get(`${BASE_URL}/api/spas/view/${id}`)
-        console.log(res.data)
         setSpa(res.data)
       } catch (eer) {}
     }
     setSpa(selectedSpa)
   }, [])
+
+  useEffect(() => {
+    const getReviews = async () => {
+      let res = await Client.get(
+        `${BASE_URL}/api/reviews/view/find_by_spa/${id}`
+      )
+      console.log(res.data)
+      setReview(res.data)
+    }
+    getReviews()
+  }, [props.review])
 
   const handleChange = (event) => {
     setFormState({ ...formState, [event.target.id]: event.target.value })
@@ -66,22 +77,34 @@ const SpaCard = (props) => {
           <h3 className="detail">{spa.description}</h3>
         </div>
 
+        <div className="list_review">
+          {review
+            ? review.map((review) => (
+                <div className="review_grid" key={review.id}>
+                  <h2>{review.title}</h2>
+                  <h4>Rating: {review.rating} of 5</h4>
+                  <p>Review: {review.review}</p>
+                </div>
+              ))
+            : ''}
+        </div>
+
         <div className="forms_section">
-          <h2 className="forms_header">Edit this Spa</h2>
+          <h2 className="forms_header">Review this Spa</h2>
           <form onSubmit={handleSubmit}>
             <div className="form_container">
               <div className="input1">
-                <label htmlFor="spa_name">Spa Name:</label>
-                <input
+                <label htmlFor="title">Title: </label>
+                <textarea
                   type="text"
-                  id="spaName"
+                  id="title"
                   onChange={handleChange}
-                  value={formState.spaName}
-                  placeholder={spa.spaName}
+                  value={formState.title}
+                  placeholder="Please write your review"
                 />
               </div>
               <div className="input1">
-                <label htmlFor="spa_image">Image:</label>
+                <label htmlFor="spa_image"> . . Image:</label>
                 <textarea
                   type="text"
                   id="imageUrl"

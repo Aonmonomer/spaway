@@ -23,6 +23,7 @@ const Spa = (props) => {
 
   return (
     <div className="list_all">
+      {console.log(Array.isArray(spa))}
       {spa
         ? spa.map((spa) => (
             <div
