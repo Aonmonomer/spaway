@@ -34,6 +34,7 @@ const SignIn = () => {
             <div className="new_email">
               <label htmlFor="email">Email: </label>
               <input
+                className="sign_in-input1"
                 onChange={handleChange}
                 name="email"
                 type="email"
@@ -45,6 +46,7 @@ const SignIn = () => {
             <div className="input1_sign_in">
               <label htmlFor="password">Password: </label>
               <input
+                className="sign_in-input2"
                 onChange={handleChange}
                 type="password"
                 name="password"
@@ -52,8 +54,11 @@ const SignIn = () => {
                 required
               />
             </div>
-            <div className="button_sign_in">
-              <button disabled={!formValues.email || !formValues.password}>
+            <div className="button_sign_in_container">
+              <button
+                className="button_sign_in"
+                disabled={!formValues.email || !formValues.password}
+              >
                 Sign In
               </button>
             </div>

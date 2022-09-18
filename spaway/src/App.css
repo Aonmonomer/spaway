@@ -6,7 +6,7 @@
   background-color: azure;
   scroll-behavior: smooth;
 }
-
+/* Nav Bar Css */
 .navbar_container {
   color: navy;
   text-decoration: none;
@@ -16,6 +16,8 @@
   justify-content: space-around;
 }
 
+/* Home page css */
+/* *************************************************/
 .home_pic_container {
   display: block;
   justify-content: center;
@@ -23,6 +25,158 @@
 
 }
 
+.home_btn {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 5;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 20%;
+}
+
+.home_btn:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.home_btn:main,
+.home_btn:focus {
+  user-select: auto;
+}
+
+.home_btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.home_btn:disabled {
+  cursor: auto;
+}
+
+.home_pic {
+    border: 10px solid skyblue;
+    padding: 15px;
+}
+
+.home_title {
+  color: navy;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/**************************************************/
+/* Sign In Page Css */
+
+.sign_in {
+  display: flex;
+  justify-content: center;
+  color: navy;
+}
+
+.button_sign_in{
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 5;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 50%;
+
+} 
+
+.button_sign_in:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button_sign_in:main,
+.button_sign_in:focus {
+  user-select: auto;
+}
+
+.button_sign_in:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button_sign_in:disabled {
+  cursor: auto;
+}
+
+.button_sign_in_container {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.form_container_sign_in {
+font-size:larger;
+border: 3px solid navy;
+
+}
+
+/**************************************************/
 .spa_card{
   justify-content: center;
   width: 500px;

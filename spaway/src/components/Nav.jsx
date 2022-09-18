@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 const Nav = ({ authenticated, user, handleLogOut }) => {
   let authenticatedOptions
-  if (user) {
+  if (authenticated) {
     authenticatedOptions = (
       <div className="pub_opts">
         <span>
