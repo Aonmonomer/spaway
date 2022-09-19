@@ -202,4 +202,30 @@ border: 3px solid navy;
 /* Spa Card Page CSS */
 .spa_card_image {
   width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.details_container{
+  text-align: center;
+}
+
+/**************************************************/
+/* Review Page CSS */
+.review_grid {
+  border: 3px solid navy;
+}
+
+.forms_section {
+  text-align: center;
+  border: 3px solid navy;
+}
+
+.forms_header {
+  text-align: center;
+}
+
+.review_text_area{
+  rows: 5
 }

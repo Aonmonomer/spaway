@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { BASE_URL } from '../globals'
 import Client from '../services/api'
 import ReviewFields from './ReviewFields'
+import '../App.css'
+
 const ReviewCard = ({ review, getReviews }) => {
   const [isEditing, setIsEditing] = useState(false)
   const [formState, setFormState] = useState(review)
