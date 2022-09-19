@@ -1,16 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
-const Nav = ({ authenticated, user, handleLogOut }) => {
+const Nav = ({ authenticated, handleLogOut }) => {
   let authenticatedOptions
   if (authenticated) {
     authenticatedOptions = (
       <div className="pub_opts">
-        <span>
-          <NavLink className="nav_links" to="/spa_add">
-            Add Spa
-          </NavLink>
-        </span>
-
         <span>
           <NavLink className="nav_links" to="/feed">
             Spas
@@ -53,7 +47,7 @@ const Nav = ({ authenticated, user, handleLogOut }) => {
   return (
     <div className="navbar_container">
       {staticOptions}
-      {authenticated && user ? authenticatedOptions : publicOptions}
+      {authenticated ? authenticatedOptions : publicOptions}
     </div>
   )
 }

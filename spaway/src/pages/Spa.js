@@ -24,14 +24,14 @@ const Spa = (props) => {
   return (
     <div className="list_all">
       {spa
-        ? spa
-            .map((spa) => (
-              <div
-                className="spa_grid"
-                onClick={() => showSpas(spa)}
-                key={spa.id}
-              >
-                <h2 className="spa_name">{spa.spaName}</h2>
+        ? spa.map((spa) => (
+            <div
+              className="spa_grid"
+              onClick={() => showSpas(spa)}
+              key={spa.id}
+            >
+              <h2 className="spa_name">{spa.spaName}</h2>
+              <div>
                 <img
                   className="spa_card"
                   style={{ display: 'block' }}
@@ -42,8 +42,8 @@ const Spa = (props) => {
                 <h3>Location: {spa.location}</h3>
                 <p>Description: {spa.description}</p>
               </div>
-            ))
-            .sort()
+            </div>
+          ))
         : ''}
     </div>
   )

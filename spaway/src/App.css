@@ -177,7 +177,29 @@ border: 3px solid navy;
 }
 
 /**************************************************/
+/* Spa Page CSS */
 .spa_card{
+  display: flex;
   justify-content: center;
+  width: 500px;
+
+}
+.list_all {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+}
+
+.spa_grid{
+  border: 5px solid navy;
+}
+
+.spa_name {
+  text-align: center;
+}
+
+/**************************************************/
+/* Spa Card Page CSS */
+.spa_card_image {
   width: 500px;
 }

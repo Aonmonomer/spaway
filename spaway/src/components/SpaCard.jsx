@@ -64,13 +64,13 @@ const SpaCard = (props) => {
     <div className="details_page">
       <div className="details_grid">
         <h1 className="spa_name">{spa.spaName}</h1>
-        <img className="spa_card" src={spa.imageUrl} alt="spa image" />
+        <img className="spa_card_image" src={spa.imageUrl} alt="spa image" />
         <div className="details_container">
-          <h3 className="details_header">Phone Number</h3>
+          <h3 className="details_header">Phone Number: </h3>
           <h3 className="detail">{spa.phoneNumber}</h3>
-          <h3 className="details_header2">Location</h3>
+          <h3 className="details_header2">Location: </h3>
           <h3 className="detail">{spa.location}</h3>
-          <h3 className="detail_header3">Description</h3>
+          <h3 className="detail_header3">Description: </h3>
           <h3 className="detail">{spa.description}</h3>
         </div>
 
